@@ -1,4 +1,6 @@
 FROM ubuntu:latest
-RUN apt update && apt upgrade -y && apt install nginx cron git -y && service nginx start && service cron start \
-    && cd /var/www/html && git clone https://github.com/bluemiaomiao/jjvmm-repo.git \
-    && echo '*/5 * * * * www-data cd /var/www/html && git clone https://github.com/bluemiaomiao/jjvmm-repo.git' >> /etc/crontab
+COPY pull-repo.sh /pull_repo.sh
+WORKDIR /
+RUN apt update && apt upgrade -y && apt install nginx cron git -y && chmod a+x /pull-repo.sh
+ENTRYPOINT ["/pull-repo.sh"]
+CMD ["/bin/sh","-c"]
