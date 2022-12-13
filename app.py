@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
+
 from libcore.config.config import Config
 from libcore.repository.index import Index
 from libcore.repository.local_repository import LocalRepository

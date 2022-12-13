@@ -2,8 +2,11 @@
 # -*- coding:utf-8 -*-
 
 class EncryptUtil:
+    SHA_256 = 0b111
+    SHA_128 = 0b110
+
     @staticmethod
-    def get_file_checksum():
+    def get_file_checksum(algo: str):
         pass
 
 

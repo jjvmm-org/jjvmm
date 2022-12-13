@@ -54,6 +54,14 @@ class Cache:
         :return:
         """
 
+    @staticmethod
+    def remove_all_caches() -> bool:
+        """
+        删除全部的缓存
+        :return:
+        """
+        pass
+
 
 if __name__ == '__main__':
     pass
