@@ -113,6 +113,7 @@ class Config:
     def get(self, key: str) -> str:
         """
         获取配置项
+        配置获取优先级: 当前环境变量 > 配置文件 > 默认值
         :param key: Key
         :return: Value
         """
@@ -151,6 +152,7 @@ class Config:
     def get_with_default(self, key: str, default: str):
         """
         获取配置项, 如果这个配置项的值为空，那么返回用户指定的 default
+        配置获取优先级: 当前环境变量 > 配置文件 > 指定的默认值 > 默认值
         :param key: Key
         :return: Value
         :param default: 默认值
